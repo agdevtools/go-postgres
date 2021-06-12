@@ -1,6 +1,7 @@
 package main
 
 import (
+    "os"
     "fmt"
     "go-postgres/router"
     "log"
@@ -11,7 +12,13 @@ func main() {
     r := router.Router()
     // fs := http.FileServer(http.Dir("build"))
     // http.Handle("/", fs)
-    fmt.Println("Starting server on the port 8080...")
 
-    log.Fatal(http.ListenAndServe(":8080", r))
+    port := os.Getenv("PORT")
+    if port == "" {
+            port = "3000"
+    }
+
+    fmt.Println("Starting server on the port..."+port)
+
+    log.Fatal(http.ListenAndServe(":"+port, r))
 }
