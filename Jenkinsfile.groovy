@@ -39,10 +39,12 @@ node {
     }
 
     stage('Build') {
-        sh 'go version'
-        sh 'go get -u golang.org/x/lint/golint'
-        sh 'go build -o bin/main main/main.go'
+        withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]) {
+            sh 'go version'
+            sh 'go get -u golang.org/x/lint/golint'
+            sh 'go build -o bin/main main/main.go'
 
+        }
     }
 
     stage('Test') {
