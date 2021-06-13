@@ -18,7 +18,7 @@ func main() {
             port = "3000"
     }
 
-    fmt.Println("Starting server on the ******** FEATURE ******* port..."+port)
+    fmt.Println("Starting server on the ******** FEATURE 2 baby ******* port..."+port)
 
     log.Fatal(http.ListenAndServe(":"+port, r))
 }
