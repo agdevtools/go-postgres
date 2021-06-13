@@ -43,7 +43,7 @@ node {
 
     stage('Build') {
 
-        sh 'go build -o bin/main main/main.go'
+        sh './go build -o bin/main main/main.go'
 
     }
 
