@@ -39,6 +39,7 @@ node {
     }
 
     stage('Build') {
+        def root = tool type: 'go', name: 'Go 1.16.4'
         withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]) {
             sh 'go version'
             sh 'go get -u golang.org/x/lint/golint'
