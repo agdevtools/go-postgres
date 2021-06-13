@@ -57,7 +57,7 @@ node {
     stage('Deploy to Heroku') {
 
         sh 'git commit --allow-empty -m "Trigger Heroku deploy after enabling collectstatic"'
-        sh 'git push'
+        sh 'git push origin master'
 
     }
 }
