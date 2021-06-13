@@ -42,8 +42,9 @@ node {
     }
 
     stage('Build') {
-
-        sh './go build -o bin/main main/main.go'
+        sh 'go version'
+        sh 'go get -u golang.org/x/lint/golint'
+        sh 'go build -o bin/main main/main.go'
 
     }
 
