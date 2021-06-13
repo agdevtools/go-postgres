@@ -59,7 +59,7 @@ node {
         sh 'git checkout master'
         sh 'git fetch'
         sh 'git pull'
-        sh 'git merge add-feature'
+        sh 'git merge origin/add-feature'
         sh 'git commit --allow-empty -m "merge feature branch with master to deploy"'
         sh 'git push'
 
